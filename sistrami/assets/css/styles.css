@@ -1,0 +1,41 @@
+table.my-table th
+{
+  text-align: center;
+}
+
+table.my-table td, table.my-table th
+{
+    vertical-align: middle !important;
+}
+
+table.my-table tr td ul.list-inline
+{
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+table.my-table tr .td-id
+{
+    text-align: center;
+    width: 60px;
+}
+
+table.my-table tr .one-icon
+{
+    width: 51px;
+}
+
+table.my-table tr .two-icons
+{
+    width: 87px;
+}
+
+table.my-table tr .three-icons
+{
+    width: 122px;
+}
+
+table.my-table tr .four-icons
+{
+    width: 157px;
+}
