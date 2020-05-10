@@ -30,7 +30,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 </head>
-
 <body>
 
     <div id="wrapper">
@@ -38,7 +37,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Startmin</a>
+                <a class="navbar-brand" href="ind   ex.html">Startmin</a>
             </div>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -138,80 +137,12 @@
                                 </div>
                             </li>-->
                         <li>
-                            <a href="table.html"><i class="fa fa-table fa-fw"></i> Table</a>
+                            <a href="formRegistro.html" target="contenido"><i class="fa fa-edit fa-fw"></i> Registrar Documento</a>
                         </li>
                         <li>
-                            <a href="form.html"><i class="fa fa-edit fa-fw"></i> Form</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-								<li>
-									<a href="icons.html"><i class="fa fa-fonticons fa-fw"></i> Icons</a>
-								</li>
-								<li>
-                                    <a href="buttons.html"><i class="fa fa-thumbs-up fa-fw"></i> Buttons</a>
-                                </li>
-                                <!--<li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>-->
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li class="active">
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a class="active" href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                            <a href="table.html" target="contenido"><i class="fa fa-book fa-fw"></i> Libro de Registro</a>
+                        </li>                                                
+                                                
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -219,11 +150,12 @@
             <!-- /.navbar-static-side -->
         </nav>
 
+
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <h1 class="page-header">Libro de Registro</h1>
                     </div>                    
                 </div>
@@ -292,13 +224,23 @@
                                         <td>{{registro.asunto}}</td>
                                         <td>{{registro.folios}}</td>
                                         <td>
-                                            <ul class="list-inline">                                                
+                                            <form name="form" ng-submit="save()" >
+                                            <ul class="list-inline">              
+                                                <li>
+                                                    <select ng-repeat="oficina in oficinas" class="form-control" name="aOficina" id="aOficina" ng-model="pase.aOficina">
+                                                        <option value="{{oficina.ID}}">{{oficina.nombre}}</option>
+                                                    </select>                                  
+                                                </li>
+                                                <li>
+                                                    <input type="text" name="para" id="para" class="form-control" ng-model="pase.para" is-words placeholder="Para:"/>
+                                                </li>
                                                 <li>
                                                     <button title="Editar {{registro.IDregistro}}" class="btn btn-xs btn-warning" ng-click="showFormModal(registro)">
-                                                        <span class="fa fa-pencil"> Pase a:</span>
+                                                        <span class="fa fa-pencil"> Proveer</span>
                                                     </button>
                                                 </li>                                                
                                             </ul>
+                                            </form>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -307,11 +249,10 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.row -->                
+                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
         </div>
-        <!-- /#page-wrapper -->
+
 
     </div>
     <!-- /#wrapper -->
